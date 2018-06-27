@@ -16,7 +16,8 @@ const mapDispatchToProps=(dispatch)=>({
 
 const mapStateToProps=(state)=>{
     return {
-        title:state.title
+        title:state.title,
+        subPoint:state.subPoint
     };
 }
 

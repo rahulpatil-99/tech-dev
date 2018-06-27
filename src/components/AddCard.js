@@ -21,7 +21,7 @@ export class AddCard extends React.Component{
         saveCard();
     }
     render(){
-        const { title } = this.props;
+        const { title,subPoint } = this.props;
         return(
             <form className="add-card-form" onSubmit={this.handleForm}>
                 <h1>Add Card:</h1>
@@ -35,8 +35,9 @@ export class AddCard extends React.Component{
                     />
                 </label>
                 <input type="text" name="subTitle" 
-                    onBlur={this.handleSubPoint}
+                    onChange={this.handleSubPoint}
                     className="subtitle-input"
+                    value={subPoint}
                     required
                 />
                 <input type="submit" value="submit" />
