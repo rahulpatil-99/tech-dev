@@ -15,10 +15,7 @@ const mapDispatchToProps=(dispatch)=>({
 });
 
 const mapStateToProps=(state)=>{
-    return {
-        title:state.title,
-        subPoint:state.subPoint
-    };
+    return state;
 }
 
 export default connect(
