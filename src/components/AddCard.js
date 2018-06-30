@@ -40,7 +40,7 @@ export class AddCard extends React.Component{
                     value={subPoint}
                     required
                 />
-                <input type="submit" value="submit" />
+                <input type="submit" value="submit" className="submit-input"/>
              </form>
         );
     }
