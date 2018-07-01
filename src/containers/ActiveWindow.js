@@ -1,13 +1,16 @@
 import { connect } from "react-redux";
 import { ActivityWindow } from '../components/ActivityWindow';
-import { saveCardTitle,saveSubPoint,addCard } from '../actions';
+import { saveCardTitle,addNewPoint,addCard,saveSubPoint } from '../actions';
 
 const mapDispatchToProps=(dispatch)=>({
-    addTitle: (title)=>{
+    saveTitle: (title)=>{
         dispatch(saveCardTitle(title));
     },
-    addSubPoint: (text)=>{
-        dispatch(saveSubPoint(text));
+    addSubPoint: ()=>{
+        dispatch(addNewPoint());
+    },
+    saveSubPoint: (text,index)=>{
+        dispatch(saveSubPoint(text,index));
     },
     saveCard: ()=>{
         dispatch(addCard());

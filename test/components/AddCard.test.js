@@ -7,21 +7,15 @@ describe("test AddCard",()=>{
     it("should render AddCard",()=>{
         const component = shallow(<AddCard />);
         expect(component.find('form')).toHaveLength(1);
-        expect(component.find('input')).toHaveLength(3);
+        expect(component.find('input')).toHaveLength(2);
+        expect(component.find('SubPoint')).toHaveLength(1);
     });
-    it("should trigger addTitle  action on change on title input",()=>{
-        const addTitle = td.func();
-        const component = shallow(<AddCard addTitle={addTitle}/>);
+    it("should trigger saveTitle  action on change on title input",()=>{
+        const saveTitle = td.func();
+        const component = shallow(<AddCard saveTitle={saveTitle}/>);
         const titleInput = component.find('.title-input');
         titleInput.simulate('change',{ target: { value: 'some title'}});
-        td.verify(addTitle('some title'));
-    });
-    it("should trigger addPoint action on change on subtitle input",()=>{
-        const addSubPoint = td.func();
-        const component = shallow(<AddCard addSubPoint={addSubPoint}/>);
-        const subPointInput = component.find('.subtitle-input');
-        subPointInput.simulate('change',{ target: { value: 'some subtitle'}});
-        td.verify(addSubPoint('some subtitle'));
+        td.verify(saveTitle('some title'));
     });
     it("should trigger saveCard action on click of submit input of form",()=>{
         const saveCard = td.func();

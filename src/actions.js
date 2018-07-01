@@ -7,14 +7,19 @@ export const saveCardTitle = (title)=>{
     }
 };
 
-export const saveSubPoint = (text)=>{
+export const saveSubPoint = (text,index)=>{
     return {
         type:"SAVE_SUB_POINT",
         data:{
-            point:text
+            point:text,
+            index
         }
     }
 };
+
+export const addNewPoint = ()=>{
+    return { type: "ADD_NEW_POINT"}
+}
 
 export const addCard = ()=>{
     return {

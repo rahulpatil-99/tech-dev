@@ -12,11 +12,20 @@ describe("testing Cards",()=>{
     });
       
     it("should render given list of cards",()=>{
-        const cards=[{"title":"first","subPoint":"first subpoint"},
-                    {"title":"second","subPoint":"second subpoint"}];
+        const cards=[{"title":"first","subPoints":[]},
+                    {"title":"second","subPoints":[]}];
         const component = shallow(<Cards cards={cards}/>);
         expect(component.props('cards')).toBeTruthy();
-        expect(component.find('.first').text()).toBe("1. first first subpoint");
-        expect(component.find('.second').text()).toBe("2. second second subpoint");
-    })
+        expect(component.find('.first').text()).toBe("1. first ");
+        expect(component.find('.second').text()).toBe("2. second ");
+    });
+
+    it("should render given list of cards with given subPoint",()=>{
+        const cards=[{"title":"first","subPoints":["one","two"]},
+                    {"title":"second","subPoints":["three","four","five"]}];
+        const component = shallow(<Cards cards={cards}/>);
+        expect(component.props('cards')).toBeTruthy();
+        expect(component.find('.first').text()).toBe("1. first one two ");
+        expect(component.find('.second').text()).toBe("2. second three four five ");
+    });
 });

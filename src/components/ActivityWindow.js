@@ -4,12 +4,12 @@ import { Cards } from './Cards';
 
 export class ActivityWindow extends React.Component{
     render(){
-        const { addTitle,addSubPoint,saveCard,title,subPoint,cards } = this.props;
+        const { saveTitle,addSubPoint,saveSubPoint,saveCard,title,subPoints,cards } = this.props;
         return (
             <div>
-                <AddCard addTitle={addTitle} 
-                addSubPoint={addSubPoint} saveCard={saveCard} 
-                title={title} subPoint={subPoint}/>
+                <AddCard saveTitle={saveTitle} 
+                addSubPoint={addSubPoint} saveCard={saveCard} saveSubPoint={saveSubPoint}
+                title={title} subPoints={subPoints}/>
                 <Cards cards={cards}/>
             </div>
         );

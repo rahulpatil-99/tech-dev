@@ -1,14 +1,17 @@
 import React from 'react';
 
-const style={
-    "margin-left":'15px'
-}
-
 const anotherStyle={
     "margin-left":'3px'
 }
 
 export class Cards extends React.Component{
+    getSubPoints(subPoints){
+        if(!subPoints.length) return;
+        return subPoints.map((point,index)=>{
+            return <li key={index}>{point} </li>
+        });
+    }
+
     createCards(){
         const { cards } = this.props;
         if(!cards.length)  return <h3>No Cards</h3>;
@@ -17,7 +20,7 @@ export class Cards extends React.Component{
                 <p className={card.title} key={index}>
                     <b><span>{index+1}. </span>
                     <span style={anotherStyle}>{card.title} </span></b>
-                    <span style={style}>{card.subPoint}</span>
+                    <ul>{this.getSubPoints(card.subPoints)}</ul>
                 </p>
             )
         });

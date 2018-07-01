@@ -3,7 +3,7 @@ import reducer from './reducer';
 
 const initialState = {
     title:'',
-    subPoint:'',
+    subPoints:[],
     cards:[]
 }
 const store = createStore(reducer,
