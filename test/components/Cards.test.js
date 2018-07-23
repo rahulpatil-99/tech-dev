@@ -8,7 +8,7 @@ describe("testing Cards",()=>{
         expect(component.find('h1')).toHaveLength(1);
         expect(component.find('h1').text()).toBe("Your Cards:");
         expect(component.find('h3')).toHaveLength(1);
-        expect(component.find('h3').text()).toBe("No Cards");
+        expect(component.find('h3').text()).toBe("No Cards Available");
     });
       
     it("should render given list of cards",()=>{

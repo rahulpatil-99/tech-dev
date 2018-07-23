@@ -1,4 +1,4 @@
-import {saveCardTitle,saveSubPoint,addCard} from '../src/actions';
+import {saveCardTitle,saveSubPoint,addCard, addNewPoint} from '../src/actions';
 global.td = require('testdouble');
 
 describe("testing Actions",()=>{
@@ -14,12 +14,21 @@ describe("testing Actions",()=>{
     });
 
     it("should return type as SAVE_SUB_POINT with given point in data",()=>{
-        const actual = saveSubPoint('save plants');
+        const actual = saveSubPoint('save plants',0);
         const expected = {
             type:"SAVE_SUB_POINT",
             data:{
-                point:'save plants'
+                point:'save plants',
+                index:0
             }
+        };
+        expect(actual).toEqual(expected);
+    });
+
+    it("should return type as ADD_NEW_POINT with no data",()=>{
+        const actual = addNewPoint();
+        const expected = {
+            type:"ADD_NEW_POINT"
         };
         expect(actual).toEqual(expected);
     });

@@ -14,7 +14,7 @@ export class Cards extends React.Component{
 
     createCards(){
         const { cards } = this.props;
-        if(!cards.length)  return <h3>No Cards</h3>;
+        if(!cards.length)  return <h3>No Cards Available</h3>;
         return cards.map((card,index) => {
             return (
                 <p className={card.title} key={index}>
@@ -28,7 +28,7 @@ export class Cards extends React.Component{
     render(){
         const allCards = this.createCards();
         return (
-            <div style={{"padding-top":'30px'}}>
+            <div >
                 <h1>Your Cards:</h1>
                 {allCards}
             </div>
